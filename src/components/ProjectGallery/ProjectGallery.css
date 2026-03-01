@@ -32,6 +32,16 @@
     border-color: transparent;
 }
 
+.filter-count {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 6px;
+    font-size: var(--font-size-xs);
+    background: rgba(255,255,255,0.15);
+    border-radius: 99px;
+    line-height: 1.6;
+}
+
 .project-gallery {
     width: 100%;
 }
