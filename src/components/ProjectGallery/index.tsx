@@ -16,6 +16,7 @@ const p = (file: string) => `${BASE}assets/projects/${file}`;
 
 const INT = 'Residential & Office Interiors';
 const COM = 'Commercial Complexes';
+const CPL = 'Completed Projects';
 
 const LIV = 'Living Rooms';
 const BED = 'Bedrooms';
@@ -26,6 +27,21 @@ const STA = 'Staircases & Lobbies';
 const INT_SUBCATS = [LIV, BED, DIN, KIT, STA];
 
 const projects: Project[] = [
+    // ── Completed Projects (real photos) ─────────────────────────────────────
+    { id: 70, title: 'Modern Villa — Exterior',     category: CPL, year: '2025', image: p('cp-ext-01.jpg'), featured: true },
+    { id: 71, title: 'Modern Villa — Entrance',     category: CPL, year: '2025', image: p('cp-ext-03.jpg'), featured: true },
+    { id: 72, title: 'Modern Villa — Night View',   category: CPL, year: '2025', image: p('cp-ext-04.jpg') },
+    { id: 73, title: 'Reception — Green Sofas',     category: CPL, year: '2025', image: p('cp-rec-02.jpg'), featured: true },
+    { id: 74, title: 'Double Height Lobby',         category: CPL, year: '2025', image: p('cp-rec-01.jpg'), featured: true },
+    { id: 75, title: 'Foyer — Wooden Dividers',     category: CPL, year: '2025', image: p('cp-foy-01.jpg'), featured: true },
+    { id: 76, title: 'Living Room',                 category: CPL, year: '2025', image: p('cp-liv-02.jpg') },
+    { id: 77, title: 'Floating Staircase',          category: CPL, year: '2025', image: p('cp-stair-01.jpg') },
+    { id: 78, title: 'Biophilic Corridor',          category: CPL, year: '2025', image: p('cp-cor-01.jpg') },
+    { id: 79, title: 'Bedroom',                     category: CPL, year: '2025', image: p('cp-bed-01.jpg') },
+    { id: 80, title: 'Reception — Wide View',       category: CPL, year: '2025', image: p('cp-rec-03.jpg') },
+    { id: 81, title: 'Living Room — TV Wall',       category: CPL, year: '2025', image: p('cp-liv-01.jpg') },
+    { id: 82, title: 'Exterior — Street View',      category: CPL, year: '2025', image: p('cp-ext-02.jpg') },
+
     // ── Residence ─────────────────────────────────────────────────────────────
     { id:  1, title: 'Modern Villa',                category: 'Residence', year: '2024', image: p('project-1.jpg'),   featured: true },
     { id:  2, title: 'Contemporary Residence',      category: 'Residence', year: '2024', image: p('res-new-01.jpg'),  featured: true },
@@ -112,7 +128,7 @@ const projects: Project[] = [
     { id: 68, title: 'Curved Staircase',            category: INT, subcategory: STA, year: '2025', image: p('wa-12.jpg')      },
 ];
 
-const CATEGORIES = ['All', 'Residence', 'Apartments', COM, INT];
+const CATEGORIES = ['All', CPL, 'Residence', 'Apartments', COM, INT];
 
 const ProjectGallery: React.FC = () => {
     const [active, setActive] = useState('All');

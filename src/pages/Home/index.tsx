@@ -1,23 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 const BASE = import.meta.env.BASE_URL;
 
 const Home: React.FC = () => {
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const [muted, setMuted] = useState(true);
-
-    useEffect(() => {
-        videoRef.current?.play().catch(() => {});
-    }, []);
-
-    const toggleMute = () => {
-        if (!videoRef.current) return;
-        videoRef.current.muted = !muted;
-        setMuted(!muted);
-    };
-
     return (
         <div className="home-page">
             {/* Hero Section */}
@@ -45,29 +32,6 @@ const Home: React.FC = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* Full-Screen Reel Section */}
-            <section className="reel-hero">
-                <video
-                    ref={videoRef}
-                    className="reel-hero-video"
-                    src={`${BASE}assets/reel.mp4`}
-                    poster={`${BASE}assets/projects/wa-10.jpg`}
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                />
-                <div className="reel-hero-overlay">
-                    <div className="reel-hero-text">
-                        <h2>Interior Design Reel</h2>
-                        <p>Crafting exceptional living spaces</p>
-                    </div>
-                    <button className="mute-btn" onClick={toggleMute} aria-label={muted ? 'Unmute' : 'Mute'}>
-                        {muted ? '🔇 Unmute' : '🔊 Mute'}
-                    </button>
                 </div>
             </section>
 
